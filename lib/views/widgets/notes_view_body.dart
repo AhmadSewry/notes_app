@@ -5,7 +5,7 @@ import 'package:notes_app/views/widgets/notes_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
-  final data=const [];
+  final data = const [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +13,7 @@ class NotesViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 50),
-          CustomAppBar(),
+          CustomAppBar(title: "Notes", icon: Icons.search),
           // SizedBox(height: 50),
           Expanded(child: NotesListView()),
         ],
