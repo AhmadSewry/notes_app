@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({
@@ -11,8 +12,9 @@ class CustomButton extends StatelessWidget {
     required this.textColor,
     this.textSize = 12,
     this.onTap,
+    this.isLoading = false,
   });
-
+  final bool isLoading;
   Color backgroundColor;
   Color textColor;
   String text;
@@ -32,14 +34,19 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: textColor,
-              fontSize: textSize,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: isLoading
+              ? SizedBox(
+                height: 24,
+                width: 24,
+                child: CircularProgressIndicator(color: Colors.black))
+              : Text(
+                  text,
+                  style: TextStyle(
+                    color: textColor,
+                    fontSize: textSize,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
         ),
       ),
     );
