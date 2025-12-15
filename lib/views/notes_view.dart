@@ -10,7 +10,7 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) =>NotesCubit(),
+      create: (BuildContext context) => NotesCubit(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         floatingActionButton: FloatingActionButton(
