@@ -28,16 +28,18 @@ class _AddNoteFormState extends State<AddNoteForm> {
         children: [
           const SizedBox(height: 32),
           CustomTextField(
+            onPressed: () {},
             hintText: "Title",
-            onSaved: (value) {
+            onChanged: (value) {
               title = value;
             },
           ),
           const SizedBox(height: 16),
           CustomTextField(
+            onPressed: () {},
             hintText: "Content",
             maxLines: 5,
-            onSaved: (value) {
+            onChanged: (value) {
               subTitle = value;
             },
           ),
